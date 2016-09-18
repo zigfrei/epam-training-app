@@ -1,10 +1,10 @@
 //  19/09/2016
     import java.io.BufferedReader;
+    import java.io.IOException;
     import java.io.InputStreamReader;
-    import java.util.ArrayList;
 
 
-    public class Main {
+public class Main {
 
 
         public static class Metods{
@@ -51,6 +51,7 @@
         }
 
         public static void main(String[] args) {
+            Metods metods =new Metods();
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             System.out.println("Выберите нужную вам операцию:");
             System.out.println("1.Сложение");
@@ -65,13 +66,13 @@
 
             //Введение номера + проверка
             boolean numpass = true;
-            Double number2 = null;
+            int choise1 = 7;
             while (numpass) {
                 try {
                     String number1 = reader.readLine();
 
-                    number2 = Double.parseDouble(number1);
-                    if (number2 > 7 || number2 < 1) {
+                    choise1 = Integer.parseInt(number1);
+                    if (choise1 > 7 || choise1 < 1) {
                         System.out.println("Номер должен быть от 1 до 7");
                     } else {
                         numpass = false;
@@ -82,8 +83,67 @@
                 }
 
             }
-            if (number2 == 7) {System.out.println("Выход");}
-            else{System.out.println("АРаспельшики!!!!");}
+            if (choise1 == 7) {System.out.println("Выход");}
+            else{
+                numpass =true;
+                double number1=0;
+                double number2=0;
+
+
+                if(choise1 ==1){
+                    while (numpass) {
+                        System.out.println("Введите первое слогаемое, затем второе");
+                        try {
+                            number1 = Double.parseDouble(reader.readLine());
+                            number2 = Double.parseDouble(reader.readLine());
+                        } catch (IOException e) {
+                            System.out.println("Неверный ввод данных, попробуйте снова.");}
+
+                        System.out.printf("Ответ:%f\n", metods.summation(number1, number2));
+                        numpass =false;}}
+
+                if(choise1 ==2){
+                    while (numpass) {
+                        System.out.println("Введите первое вычитаемое, затем второе");
+                        try {
+                            number1 = Double.parseDouble(reader.readLine());
+                            number2 = Double.parseDouble(reader.readLine());
+                        } catch (IOException e) {
+                            System.out.println("Неверный ввод данных, попробуйте снова.");}
+
+                        System.out.printf("Ответ:%f\n", metods.subtraction(number1, number2));
+                        numpass =false;}}
+
+                if(choise1 ==3){
+                    while (numpass) {
+                        System.out.println("Введите перввй множитель, затем второй");
+                        try {
+                            number1 = Double.parseDouble(reader.readLine());
+                            number2 = Double.parseDouble(reader.readLine());
+                        } catch (IOException e) {
+                            System.out.println("Неверный ввод данных, попробуйте снова.");}
+
+                        System.out.printf("Ответ:%f\n", metods.multiply(number1, number2));
+                        numpass =false;}}
+
+                if(choise1 ==4){
+                    while (numpass) {
+                        System.out.println("Введите делимое, затем делитель");
+                        try {
+                            number1 = Double.parseDouble(reader.readLine());
+                            number2 = Double.parseDouble(reader.readLine());
+                        } catch (IOException e) {
+                            System.out.println("Неверный ввод данных, попробуйте снова.");}
+
+                        System.out.printf("Ответ:%f\n", metods.divide(number1, number2));
+                        numpass =false;}}
+
+
+
+
+
+
+            }
 
         }
 
