@@ -1,3 +1,4 @@
+package com.github.zigfrei.epam_training_app;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
