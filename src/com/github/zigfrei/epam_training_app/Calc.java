@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
  * Created by User on 19.09.2016.
  */
 public class Calc {
-    public static class Metods {
+    public class Metods {
 
 
         public Double summation(double n1, double n2) { //сложение
@@ -79,104 +79,104 @@ public class Calc {
                 }
 
             }
-            if (choise1 == 7) {
-                System.out.println("Выход");calcExit =false;}
-            else {
+
                 numpass = true;
                 double number1 = 0;
                 double number2 = 0;
 
+                switch (choise1) {
+                    case 1:
+                        while (numpass) {
+                            System.out.println("Введите первое слогаемое, затем второе");
+                            try {
+                                number1 = Double.parseDouble(reader.readLine());
+                                number2 = Double.parseDouble(reader.readLine());
+                            } catch (IOException e) {
+                                System.out.println("Неверный ввод данных, попробуйте снова.");
+                            }
 
-                if (choise1 == 1) {
-                    while (numpass) {
-                        System.out.println("Введите первое слогаемое, затем второе");
-                        try {
-                            number1 = Double.parseDouble(reader.readLine());
-                            number2 = Double.parseDouble(reader.readLine());
-                        } catch (IOException e) {
-                            System.out.println("Неверный ввод данных, попробуйте снова.");
+                            System.out.printf("Ответ:%f\n", metods.summation(number1, number2));
+                            numpass = false;
                         }
+                        break;
 
-                        System.out.printf("Ответ:%f\n", metods.summation(number1, number2));
-                        numpass = false;
-                    }
+                    case 2:
+                            while (numpass) {
+                                System.out.println("Введите первое вычитаемое, затем второе");
+                                try {
+                                    number1 = Double.parseDouble(reader.readLine());
+                                    number2 = Double.parseDouble(reader.readLine());
+                                } catch (IOException e) {
+                                    System.out.println("Неверный ввод данных, попробуйте снова.");
+                                }
+
+                                System.out.printf("Ответ:%f\n", metods.subtraction(number1, number2));
+                                numpass = false;
+                            }
+                            break;
+
+                    case 3:
+                            while (numpass) {
+                                System.out.println("Введите перввй множитель, затем второй");
+                                try {
+                                    number1 = Double.parseDouble(reader.readLine());
+                                    number2 = Double.parseDouble(reader.readLine());
+                                } catch (IOException e) {
+                                    System.out.println("Неверный ввод данных, попробуйте снова.");
+                                }
+
+                                System.out.printf("Ответ:%f\n", metods.multiply(number1, number2));
+                                numpass = false;
+                            }
+                            break;
+
+                    case 4:
+                            while (numpass) {
+                                System.out.println("Введите делимое, затем делитель");
+                                try {
+                                    number1 = Double.parseDouble(reader.readLine());
+                                    number2 = Double.parseDouble(reader.readLine());
+                                } catch (IOException e) {
+                                    System.out.println("Неверный ввод данных, попробуйте снова.");
+                                }
+
+                                System.out.printf("Ответ:%f\n", metods.divide(number1, number2));
+                                numpass = false;
+                            }
+                            break;
+
+                    case 5:
+                            while (numpass) {
+                                System.out.println("Введите число, затем степень");
+                                try {
+                                    number1 = Double.parseDouble(reader.readLine());
+                                    number2 = Double.parseDouble(reader.readLine());
+                                } catch (IOException e) {
+                                    System.out.println("Неверный ввод данных, попробуйте снова.");
+                                }
+
+                                System.out.printf("Ответ:%f\n", metods.exponentiation(number1, number2));
+                                numpass = false;
+                            }
+                            break;
+                    case 6:
+                            while (numpass) {
+                                System.out.println("Введите число для извлечения квадратного корня");
+                                try {
+                                    number1 = Double.parseDouble(reader.readLine());
+                                } catch (IOException e) {
+                                    System.out.println("Неверный ввод данных, попробуйте снова.");
+                                }
+
+                                System.out.printf("Ответ:%f\n", metods.rooting(number1));
+                                numpass = false;
+                            }
+                            break;
+                    case 7:
+                            System.out.println("Выход");calcExit =false;
+                        break;
                 }
-
-                if (choise1 == 2) {
-                    while (numpass) {
-                        System.out.println("Введите первое вычитаемое, затем второе");
-                        try {
-                            number1 = Double.parseDouble(reader.readLine());
-                            number2 = Double.parseDouble(reader.readLine());
-                        } catch (IOException e) {
-                            System.out.println("Неверный ввод данных, попробуйте снова.");
-                        }
-
-                        System.out.printf("Ответ:%f\n", metods.subtraction(number1, number2));
-                        numpass = false;
-                    }
-                }
-
-                if (choise1 == 3) {
-                    while (numpass) {
-                        System.out.println("Введите перввй множитель, затем второй");
-                        try {
-                            number1 = Double.parseDouble(reader.readLine());
-                            number2 = Double.parseDouble(reader.readLine());
-                        } catch (IOException e) {
-                            System.out.println("Неверный ввод данных, попробуйте снова.");
-                        }
-
-                        System.out.printf("Ответ:%f\n", metods.multiply(number1, number2));
-                        numpass = false;
-                    }
-                }
-
-                if (choise1 == 4) {
-                    while (numpass) {
-                        System.out.println("Введите делимое, затем делитель");
-                        try {
-                            number1 = Double.parseDouble(reader.readLine());
-                            number2 = Double.parseDouble(reader.readLine());
-                        } catch (IOException e) {
-                            System.out.println("Неверный ввод данных, попробуйте снова.");
-                        }
-
-                        System.out.printf("Ответ:%f\n", metods.divide(number1, number2));
-                        numpass = false;
-                    }
-                }
-
-                if (choise1 == 5) {
-                    while (numpass) {
-                        System.out.println("Введите число, затем степень");
-                        try {
-                            number1 = Double.parseDouble(reader.readLine());
-                            number2 = Double.parseDouble(reader.readLine());
-                        } catch (IOException e) {
-                            System.out.println("Неверный ввод данных, попробуйте снова.");
-                        }
-
-                        System.out.printf("Ответ:%f\n", metods.exponentiation(number1, number2));
-                        numpass = false;
-                    }
-                }
-                if (choise1 == 6) {
-                    while (numpass) {
-                        System.out.println("Введите число для извлечения квадратного корня");
-                        try {
-                            number1 = Double.parseDouble(reader.readLine());
-                        } catch (IOException e) {
-                            System.out.println("Неверный ввод данных, попробуйте снова.");
-                        }
-
-                        System.out.printf("Ответ:%f\n", metods.rooting(number1));
-                        numpass = false;
-                    }
-                }
-
-
             }
         }
     }
-}
+
