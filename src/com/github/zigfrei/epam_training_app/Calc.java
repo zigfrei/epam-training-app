@@ -83,7 +83,7 @@ public class Calc {
                 numpass = true;
                 double number1 = 0;
                 double number2 = 0;
-
+                                        //Выбор операции с последущей реализацией
                 switch (choise1) {
                     case 1:
                         while (numpass) {
